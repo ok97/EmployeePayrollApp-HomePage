@@ -1,0 +1,28 @@
+{
+  "employee": [
+    {
+      "name": "Om Rambhau Khawshi",
+      "gender": "male",
+      "departMent": [
+        "Engineer"
+      ],
+      "salary": "40000",
+      "startDate": "1 Jan 2021",
+      "notes": "CSI Engineer",
+      "id": 1604589551457,
+      "profileUrl": "../assets/profile-images/Ellipse 1.png"
+    },
+    {
+      "name": "Ram",
+      "gender": "male",
+      "departMent": [
+        "HR"
+      ],
+      "salary": "34000",
+      "startDate": "1 May 2021",
+      "notes": "",
+      "id": 1604589594363,
+      "profileUrl": "../assets/profile-images/Ellipse 1.png"
+    }
+  ]
+}
