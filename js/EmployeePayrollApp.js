@@ -1,27 +1,20 @@
 window.addEventListener('DOMContentLoaded', (event) => {
     const name = document.querySelector('#name');
     const textError = document.querySelector('.text-error');
-    name.addEventListener('input', function () 
-    {
-        if (name.value.length == 0) 
-        {
+    name.addEventListener('input', function () {
+        if (name.value.length == 0) {
             textError.textContent = "";
             return;
         }
-        try 
-        {
+        try {
             (new EmployeePayroll()).name = name.value;
             textError.textContent = "";
         }
-        catch (e) 
-        {
+        catch (e) {
             textError.textContent = e;
         }
     });
-/* UC2:- Ability to set Event Listeners when Document is loaded so as to.
-         - Set Event Listener on Salary Range to display appropriate value.
-         - Validation of Name and Date
-*/
+
     const salary = document.querySelector('#salary');
     const output = document.querySelector('.salary—output');
     output.textContent = salary.value;
@@ -30,17 +23,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
 
     const date = document.querySelector('#date');
-    date.addEventListener('input', function () 
-    {
+    date.addEventListener('input', function () {
         let startDate = document.querySelector('#day').value + " " + document.querySelector('#month').value + " " +
             document.querySelector('#year').value;
-        try 
-        {
+        try {
             (new EmployeePayroll()).startDate = new Date(Date.parse(startDate));
             setTextValue('.date-error', "");
         } 
-        catch (e) 
-        {
+        catch (e) {
             setTextValue('.date-error', e);
         }
     });
@@ -50,15 +40,13 @@ const setTextValue = (id, value) => {
     element.textContent = value;
 }
 
-/* UC3:- Ability to create Employee Payroll Object On Save. 
-         - Validation of Name and Date and if failed then set the UI accordingly. */
+// UC 3
 const save = () => {
-    try 
-    {
-        let EmployeePayRoll = createEmployeePayroll();
+    try {
+        let employeePayrollData = createEmployeePayroll();
+        createAndUpdateStorage(employeePayrollData);
     }
-    catch (e) 
-    {
+    catch (e) {
         alert(e);
     }
 }
@@ -99,28 +87,21 @@ const getInputValueById = (id) => {
     return value;
 }
 
-
-/* UC4:- Ability to save the Employee Payroll Object to Local Storage.
- - Understand the difference between Local Storage, Session Storage and older feature of storing in cookies. Here are good references */
-function createAndUpdateStorage(employeePayrollData) 
-{
+// UC 4
+function createAndUpdateStorage(employeePayrollData) {
     let employeePayrollList = [];
     employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
-    if (employeePayrollList != undefined) 
-    {
+    if (employeePayrollList != undefined) {
         employeePayrollList.push(employeePayrollData);
     }
-    else 
-    {
+    else {
         employeePayrollList = [employeePayrollData];
     }
     alert(employeePayrollList.toString());
     localStorage.setItem("EmployeePayrollList", JSON.stringify(employeePayrollList))
 }
 
-
-
-/* UC5:- Ability to reset the form on clicking reset  */
+// UC 5
 const resetForm = () => {
     setValue('#name','');
     unsetSelectedValues('[name=profile]');

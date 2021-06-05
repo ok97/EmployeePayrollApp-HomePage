@@ -1,9 +1,5 @@
- /* UC9:- On Form Submit populate the Employee Payroll Data Object.
-             - Write JavaScript function in a separate file.
-             - Add additional fields to Employee Payroll as required.
-             - Perform the validation on the setter method. */
-class EmployeePayroll 
-{    
+class EmployeePayroll {
+    
     // getter and setter method
     get id() { return this._id; }
     set id(id) {
@@ -19,8 +15,6 @@ class EmployeePayroll
         else {
             throw "InCorrect name";
         }
-
-        this._name = name;
     }
 
     get profilePic() { return this._profilePic; }
@@ -57,6 +51,7 @@ class EmployeePayroll
           throw 'Start Date is beyond 30 Days!';
         this._startDate = startDate; 
     }
+    
     // toString() method
     toString() {
         const options={year:'numeric',month:'numeric',day:'numeric'};

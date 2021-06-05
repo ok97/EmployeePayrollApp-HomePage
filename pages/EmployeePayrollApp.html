@@ -6,16 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/EmployeePayrollApp.css">
-    <link rel="icon" href="../assets/images/logo.png">
     <title>Employee Payroll Form</title>
 </head>
 
 <body>
-    <!-- UC1:- Ability to create an Employee Payroll System UI.
-             - Create an Employee Payroll Form as a webpage using HTML, CSS and add a header element on top of the UI having text as ‘Employee Payroll’
-             - Create a center align box using div tag.
-             - Add a header element on top of box having text as ‘Employee Payroll Form’.
-             - Use flex and CSS properties -->
+    <!-- UC1  create an Employee Payroll System UI -->
     <header class="header-content header">
         <div class="logo-content">
             <img src="../assets/images/logo.png" alt="logo">
@@ -26,8 +21,8 @@
         </div>
     </header>
     <div class="form-content">
-        <form class="form" action="#" onsubmit="save();">
-           <!-- UC2:- Ability to create a Form Header and the Input Text Element for Name -->
+        <form class="form" action="#" onreset="resetForm();" onsubmit="save();">
+            <!-- UC2 Create a Form Header and the Input Text Element for Name-->
             <div class="form-head">Employee Payroll form</div>
             <div class="row-content">
                 <label class="label text" for="name">Name</label>
@@ -36,23 +31,23 @@
             </div>
             <div class="row-content"> 
                 <label class="label text" for="profile">Profile image</label>
-             <!--UC3:- Ability to specify the Profile Pic in the Form  -->
+                <!-- UC3 Specify the Profile Pic in the Form -->
                 <div class="profile-radio-content">
-                    <label> <input type="radio" id="profilel" name="profile" value="../assets/Profile-images/Ellipse -1.png" 
-                        required> 
-                    <img class="profile" id='imagel' src="../assets/Profile-images/Ellipse -1.png"> </label> 
-                    <label> <input type="radio" id="profile2" name="profile" value="../assets/Profile-images/Ellipse -2.png" 
-                        required> 
-                    <img class="profile" id='image2' src="../assets/Profile-images/Ellipse -2.png"> </label>
-                    <label> <input type="radio" id="profile3" name="profile" value="../assets/Profile-images/Ellipse -3.png"
-                        required> 
-                    <img class="profile" id='image3' src="../assets/Profile-images/Ellipse -3.png"> </label> 
-                    <label> <input type="radio" id="profile4" name="profile" value="../assets/Profile-images/Ellipse -4.png" 
-                        required> 
-                    <img class="profile" id='image4' src="../assets/Profile-images/Ellipse -4.png"> </label>
+                    <label> <input type="radio" id="profilel" name="profile" value="../assets/profile-images/Ellipse -1.png"
+                        required>
+                      <img class="profile" id='imagel' src="../assets/profile-images/Ellipse -1.png"> </label>
+                    <label> <input type="radio" id="profile2" name="profile" value="../assets/profile-images/Ellipse -2.png"
+                        required>
+                      <img class="profile" id='image2' src="../assets/profile-images/Ellipse -2.png"> </label>
+                    <label> <input type="radio" id="profile3" name="profile" value="../assets/profile-images/Ellipse -3.png"
+                        required>
+                      <img class="profile" id='image3' src="../assets/profile-images/Ellipse -3.png"> </label>
+                    <label> <input type="radio" id="profile4" name="profile" value="../assets/profile-images/Ellipse -4.png"
+                        required>
+                      <img class="profile" id='image4' src="../assets/profile-images/Ellipse -4.png"> </label>
                 </div>
             </div>
-        <!-- UC4:- Ability to specify the gender as radio button, department as checkbox and Salary as range indicator. -->
+            <!-- UC4 Specify the gender as radio button, department as checkbox and Salary as range indicator -->
             <div class="row-content">
                 <label class="label text" for="gender">Gender</label>
                 <div>
@@ -78,15 +73,16 @@
                 </div>
             </div>
             <div class="row-content">
-                <label class="label text" for="salary">Choose Salary </label>
+                <label class="label text" for="salary">Choose your salary: </label>
                 <input class="input" type="range" name="salary" id="salary" min="30000" max="50000" step="100" value="40000">
                 <output class="salary—output text" for="salary-output">40000</output>
             </div>
-             <!-- UC5:- Ability to specify the start date with Day, Month and Year as Select Input Item -->
+             <!--UC5 Adding date input column with select for dd/mm/yyyy option values -->
             <div class="row-content">
                 <label class="label text" for="startDate">Start Date </label>
                 <div id="date">
-                  <select id="day" name="Day">                   
+                  <select id="day" name="Day">
+                    <option value="Please select">Please select</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -119,7 +115,8 @@
                     <option value="30">30</option>
                     <option value="31">31</option>
                   </select>
-                  <select id="month" name="Month">                   
+                  <select id="month" name="Month">
+                    <option value="Please select">Please select</option>
                     <option value="Jan">January</option>
                     <option value="Feb">Febuary</option>
                     <option value="March">March</option>
@@ -133,7 +130,8 @@
                     <option value="Nov">November</option>
                     <option value="Dec">December</option>
                   </select>
-                  <select id="year" name="Year">                    
+                  <select id="year" name="Year">
+                    <option value="Please select">Please select</option>
                     <option value="2021">2021</option>
                     <option value="2020">2020</option>
                     <option valne="2019">2019</option>
@@ -144,13 +142,13 @@
                 </div>
                 <error-output class="date-error" for="startDate"></error-output>
             </div>
-         <!-- UC6:- Ability to add Notes as well as cancel, reset and submit button so as to do some action on form entry -->
+            <!--UC6 Adding notes input section and buttons for submit, cancel and reset-->
             <div class="row-content">
                 <label class="label text" for="notes">Notes</label>
                 <textarea id="notes" class="input" name="Notes" placeholder="" style="height:100px"></textarea>
             </div>
             <div class="button-content">
-                <a href="Home Page.html" class="resetButton button cancelButton">Cancel</a>
+                <a href="./EmployeePayrollApp.html" class="resetButton button cancelButton">Cancel</a>
                 <div class="submit-reset">
                     <button type="submit" class="button submitButton" id="submitButton">Submit</button>
                     <button type="reset" class="resetButton button">Reset</button>
@@ -158,13 +156,9 @@
             </div>
         </form>
     </div>
-      <!-- UC9:- On Form Submit populate the Employee Payroll Data Object.
-             - Write JavaScript function in a separate file.
-             - Add additional fields to Employee Payroll as required.
-             - Perform the validation on the setter method. -->
     <script src="../js/EmployeePayroll.js"></script>
-
-    <!-- UC -->
     <script src="../js/EmployeePayrollApp.js"></script>
+    <script src="../js/site_properties.js"></script>
+    <script src="../js/utility.js"></script>
 </body>
 </html>
